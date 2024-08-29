@@ -8,8 +8,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 public class TennisGameServiceTests {
+
+    private final TennisService tennisGameService;
     @Autowired
-    private TennisService tennisGameService;
+    public TennisGameServiceTests(TennisService tennisGameService) {
+        this.tennisGameService = tennisGameService;
+    }
 
     @Test
     public void testComputeScore() {
