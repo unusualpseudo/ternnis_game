@@ -12,8 +12,11 @@ public class TennisControllerImpl {
 
     private static final Logger logger = LogManager.getLogger(TennisControllerImpl.class);
 
+    private final TennisService tennisService;
     @Autowired
-    public TennisService tennisService;
+    public TennisControllerImpl(TennisService tennisService) {
+        this.tennisService = tennisService;
+    }
 
     // Endpoint pour obtenir le score
     @GetMapping("/compute")

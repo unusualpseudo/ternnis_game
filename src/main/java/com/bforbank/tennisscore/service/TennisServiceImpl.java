@@ -7,30 +7,34 @@ import org.springframework.stereotype.Service;
 @Service
 public class TennisServiceImpl implements TennisService{
 
+   private final Tennis tennisGame ;
     @Autowired
-    Tennis TennisGame ;
+    public TennisServiceImpl(Tennis tennisGame) {
+        this.tennisGame = tennisGame;
+    }
+
     @Override
     public String playerAWonBall() {
-        return TennisGame.playerAWonBall();
+        return tennisGame.playerAWonBall();
     }
 
     @Override
     public String playerBWonBall() {
-        return TennisGame.playerBWonBall();
+        return tennisGame.playerBWonBall();
     }
 
     @Override
     public String getScore() {
-        return TennisGame.getScore();
+        return tennisGame.getScore();
     }
 
     @Override
     public void resetGame() {
-        TennisGame.resetGame();
+        tennisGame.resetGame();
     }
 
     @Override
     public String computeScore(String input) {
-        return TennisGame.computeScore(input);
+        return tennisGame.computeScore(input);
     }
 }
